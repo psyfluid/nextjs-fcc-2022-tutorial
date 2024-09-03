@@ -1,0 +1,215 @@
+.layout
+  display: flex
+  flex-direction: column
+  min-height: 100vh
+
+header
+  height: 250px
+  padding: 15px 30px
+  background: linear-gradient(155deg, #dbfff3, transparent)
+  display: flex
+  justify-content: center
+
+  > div
+    width: 100%
+    max-width: 1200px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+  .topNav
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    nav
+      display: flex
+      gap: 15px
+      font-weight: 600
+      font-size: 16px
+
+  .title
+    width: 50%
+    font-size: 40px
+    text-transform: uppercase
+
+footer
+  background-color: #333
+  color: #fff
+  padding: 15px
+  text-align: center
+  display: flex
+  justify-content: center
+  margin-top: auto
+
+main
+  width: 100%
+  max-width: 1200px
+  margin: auto
+  padding: 50px 30px
+
+.home
+  display: flex
+  flex-direction: column
+  gap: 50px
+  justify-content: space-between
+  align-items: center
+  min-height: 100vh
+
+  .card
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: 30px
+    width: 100%
+
+    figure
+      position: relative
+      display: inline-block
+      width: 40%
+
+      .image
+        width: 100%
+        // height: auto
+        object-fit: cover
+        object-position: 50% 25%
+
+    .content
+      width: 60%
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      gap: 20px
+      padding: 20px
+
+    &:nth-of-type(2n)
+      flex-direction: row-reverse
+
+.about
+  display: flex
+  flex-direction: column
+  gap: 50px
+
+.events
+  display: flex
+  gap: 20px
+
+  .card
+    position: relative
+    width: 100%
+
+    h2
+      position: absolute
+      width: inherit
+      top: 70%
+      font-size: clamp(1rem, 3.5vw, 2.5rem)
+      text-align: center
+      text-transform: uppercase
+      text-shadow: 1px 1px 20px black
+      color: white
+
+    figure
+      position: relative
+
+      .image
+        width: 100%
+        object-fit: cover
+        object-position: 50% 25%
+
+.events-in-city
+  display: flex
+  flex-direction: column
+  gap: 50px
+  align-items: center
+  width: 100%
+
+  .content
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))
+    gap: 50px
+    width: calc(100% - (30px * 2))
+
+    .card
+      display: flex
+      flex-direction: column
+      width: 100%
+
+      h2
+        width: inherit
+        font-size: clamp(1.2rem, 2.2vw, 1.6rem)
+        text-shadow: 1px 1px 15px black
+        margin-top: 1rem
+
+      figure
+        position: relative
+        width: 100%
+        aspect-ratio: 1 / 1
+
+        .image
+          max-width: 100%
+          max-height: 100%
+          object-fit: cover
+
+.event
+  display: flex
+  flex-direction: column
+  gap: 30px
+
+  .image
+    width: 100%
+    height: auto
+    objectFit: contain
+
+.registration
+  // display: flex
+  align-items: center
+  gap: 10px
+
+  label
+    width: 100%
+    display: flex
+    margin-top: 25px
+    margin-bottom: 15px
+    font-size: 18px
+    font-weight: 800
+
+  input
+    height: 40px
+    min-width: 300px
+    box-shadow: none
+    border-image: none
+    border-radius: 5px
+    border: 1px solid #ccc
+    font-size: 16px
+    padding: 5px
+
+  button
+    min-width: 100px
+    height: 40px
+    border-radius: 5px
+    border: 1px solid #5f5a5a
+    font-size: 16px
+    font-weight: 600
+    text-transform: uppercase
+    margin-left: 10px
+    background-color: #121212
+    color: #dcfff3
+    cursor: pointer
+
+    &:hover
+      background-color: #dcfff3
+      color: #121212
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine)
+  .card:hover
+    background: rgba(var(--card-rgb), 0.1)
+    border: 1px solid rgba(var(--card-border-rgb), 0.15)
+
+  .card:hover span
+    transform: translateX(4px)
+
+@media (prefers-reduced-motion)
+  .card:hover span
+    transform: none
